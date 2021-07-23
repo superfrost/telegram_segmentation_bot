@@ -68,6 +68,8 @@ slimbot.on('message', async (message) => {
     if (message.caption) {
       let maybeSegment = parseInt(message.caption)
       if (maybeSegment) {
+        if (maybeSegment > 100) maybeSegment = 100
+        if (maybeSegment < 2) maybeSegment = 2
         segmentSize = maybeSegment.toString()
       }
     }
